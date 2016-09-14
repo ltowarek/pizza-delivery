@@ -9,4 +9,5 @@ add_executable(pizza_delivery_test tests/test.cpp)
 target_include_directories(pizza_delivery_test PUBLIC googletest/googletest/include)
 target_link_libraries(pizza_delivery_test gtest gtest_main)
 
+enable_testing()
 add_test(NAME pizza_delivery_test COMMAND pizza_delivery_test)
