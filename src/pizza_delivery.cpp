@@ -1,5 +1,22 @@
 #include "pizza_delivery.h"
 
+int pizzadelivery::PizzaDelivery::TotalDeliveryCost(const int size_x,
+                                                    const int size_y,
+                                                    const std::vector<int> &grid) const {
+  auto output = int{0};
+
+  for (int y = 0; y < size_y; ++y) {
+    for (int x = 0; x < size_x; ++x) {
+      auto tmp_output = DeliveryCost(x, y, size_x, size_y, grid);
+      if (tmp_output < output || output == 0) {
+        output = tmp_output;
+      }
+    }
+  }
+
+  return output;
+}
+
 int pizzadelivery::PizzaDelivery::DeliveryCost(const int start_x,
                                                const int start_y,
                                                const int size_x,
