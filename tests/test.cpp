@@ -37,25 +37,30 @@ TEST(PizzaDelivery, RegularGrid_Descending_DeliveriesPerStreet) {
 
 TEST(PizzaDelivery, ManhattanDistance_Horizontal_FromBeginning) {
   auto p = pizzadelivery::PizzaDelivery();
-  EXPECT_EQ(p.ManhattanDistance(0, 0, 3, 0), 4);
+  EXPECT_EQ(p.ManhattanDistance(0, 0, 4, 0), 4);
 }
 
 TEST(PizzaDelivery, ManhattanDistance_Horizontal_FromEnd) {
   auto p = pizzadelivery::PizzaDelivery();
-  EXPECT_EQ(p.ManhattanDistance(3, 0, 0, 0), 4);
+  EXPECT_EQ(p.ManhattanDistance(4, 0, 0, 0), 4);
 }
 
 TEST(PizzaDelivery, ManhattanDistance_Vertical_FromBeginning) {
   auto p = pizzadelivery::PizzaDelivery();
-  EXPECT_EQ(p.ManhattanDistance(0, 0, 0, 3), 4);
+  EXPECT_EQ(p.ManhattanDistance(0, 0, 0, 4), 4);
 }
 
 TEST(PizzaDelivery, ManhattanDistance_Vertical_FromEnd) {
   auto p = pizzadelivery::PizzaDelivery();
-  EXPECT_EQ(p.ManhattanDistance(0, 3, 0, 0), 4);
+  EXPECT_EQ(p.ManhattanDistance(0, 4, 0, 0), 4);
 }
 
 TEST(PizzaDelivery, ManhattanDistance_Complex) {
   auto p = pizzadelivery::PizzaDelivery();
-  EXPECT_EQ(p.ManhattanDistance(2, 3, 0, 1), 5);
+  EXPECT_EQ(p.ManhattanDistance(2, 4, 0, 1), 5);
+}
+
+TEST(PizzaDelivery, ManhattanDistance_SamePoint) {
+  auto p = pizzadelivery::PizzaDelivery();
+  EXPECT_EQ(p.ManhattanDistance(0, 0, 0, 0), 0);
 }
