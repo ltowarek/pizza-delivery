@@ -13,3 +13,10 @@ int pizzadelivery::PizzaDelivery::TotalDeliveryCost(const int x, const int y, co
 
   return output;
 }
+
+int pizzadelivery::PizzaDelivery::ManhattanDistance(const int start_x,
+                                                    const int start_y,
+                                                    const int end_x,
+                                                    const int end_y) const {
+  return std::abs(end_x - start_x) + std::abs(end_y - start_y) + 1;  // + 1 due to zero based range
+}

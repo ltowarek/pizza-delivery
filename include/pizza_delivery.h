@@ -8,6 +8,10 @@ namespace pizzadelivery {
 class PizzaDelivery {
  public:
   int TotalDeliveryCost(const int x, const int y, const std::vector<int> &grid) const;
+  int ManhattanDistance(const int start_x,
+                        const int start_y,
+                        const int end_x,
+                        const int end_y) const;
 };
 }  // pizzadelivery
 
